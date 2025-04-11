@@ -1,0 +1,341 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+.main-header {
+  background-image: url('img/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 60px 60px 40px;
+  color: white;
+  animation: zoomHeader 8s ease-in-out infinite alternate;
+  overflow: hidden;
+}
+
+.main-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes zoomHeader {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
+
+.main-header .logo h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #ff4081;
+  animation: fadeInDown 1s ease-out;
+}
+
+/* NAV */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 20px 0 0;
+  padding: 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.main-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ff4081;
+}
+
+/* ANIMACIONES BÁSICAS */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* NAV RESPONSIVE */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
+
+/* FILTROS */
+.filtros {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.filtros input {
+  display: none;
+}
+
+.filtros label {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background: #ddd;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.filtros input:checked + label {
+  background: #e91e63;
+  color: white;
+  box-shadow: 0 2px 6px rgba(233, 30, 99, 0.4);
+}
+
+/* GRID */
+.blog-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.6s ease-out forwards;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h2 {
+  color: #e91e63;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal con delay */
+.reveal:nth-child(1) { animation-delay: 0.2s; }
+.reveal:nth-child(2) { animation-delay: 0.4s; }
+.reveal:nth-child(3) { animation-delay: 0.6s; }
+.reveal:nth-child(4) { animation-delay: 0.8s; }
+
+/* Filtro con radio */
+.card { display: none; }
+
+#todos:checked ~ .blog-grid .card,
+#nutricion:checked ~ .blog-grid .nutricion,
+#entrenamiento:checked ~ .blog-grid .entrenamiento,
+#bienestar:checked ~ .blog-grid .bienestar {
+  display: block;
+}
+
+/* COMENTARIOS */
+.comentarios {
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comentario {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.comentario:hover {
+  transform: scale(1.02);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  border-radius: 50%;
+  margin-right: 16px;
+  position: relative;
+}
+
+.avatar::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+}
+
+.texto p {
+  margin: 0;
+}
+
+/* BOTÓN */
+.boton {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #e91e63;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.boton:hover {
+  background-color: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+}
+
+/* === BOTÓN DARK MODE === */
+.toggle-dark {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* === CLIP-PATH EN TESTIMONIOS === */
+.testimonio {
+  clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
+}
+
+/* === SCROLL SNAP PARA TESTIMONIOS === */
+.testimonios {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+.carrusel {
+  scroll-snap-align: center;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.testimonio {
+  scroll-snap-align: center;
+}
+
+
+body, header, .card, footer, .testimonio {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* === RESTO DE ESTILOS ORIGINALES PEGADOS ABAJO === */
+
+/* tu CSS original sigue acá (lo mantengo como estaba) */
+/* ... PASTE DEL CÓDIGO ORIGINAL QUE ME DISTE ... */
+  
+
+/* === Spinner de carga === */
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #FFD700;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Contador animado === */
+.contador .numero {
+  font-size: 3rem;
+  color: #FFD700;
+  font-weight: bold;
+  display: inline-block;
+  animation: contar 3s ease-in-out forwards;
+}
+
+@keyframes contar {
+  from {
+    content: "0";
+  }
+  to {
+    content: "500+";
+  }
+}
+
+/* Dark mode opcional para spinner */
+body.dark-mode #spinner {
+  background-color: #121212;
+}

@@ -1,0 +1,379 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f4f4f4, #eaeaea);
+  margin: 0;
+  padding: 0;
+  animation: fadeInBody 1s ease-in;
+  color: #333;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-header {
+  background-image: url('img/back.jpg'); /* Reemplaza por tu ruta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 60px 40px;
+  color: white;
+  animation: zoomHeader 6s ease-in-out infinite alternate;
+  overflow: hidden;
+}
+
+.main-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-header > * {
+  position: relative;
+  z-index: 1;
+  animation: fadeSlideDown 1s ease-out;
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomHeader {
+  from { background-size: 100%; }
+  to { background-size: 105%; }
+}
+
+.main-header .logo h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #e91e63;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.main-nav a:hover {
+  color: #e91e63;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+  animation: fadeInHeader 1.2s ease;
+}
+
+@keyframes fadeInHeader {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.precios-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.toggle {
+  margin-bottom: 30px;
+  display: inline-block;
+  position: relative;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle .slider {
+  background-color: #ccc;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.3s;
+}
+
+.toggle .slider::before {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 2px;
+  top: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle input:checked + .slider::before {
+  transform: translateX(30px);
+}
+
+.label-mensual,
+.label-anual {
+  margin: 0 10px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.tabla-precios {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease-in;
+}
+
+.plan {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  transition: transform 0.4s, box-shadow 0.4s;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.plan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.plan h3 {
+  color: #e91e63;
+  font-size: 24px;
+}
+
+.plan .precio {
+  font-size: 28px;
+  margin: 15px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan li {
+  margin: 10px 0;
+}
+
+.plan button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #e91e63;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.plan button:hover {
+  background: #c2185b;
+}
+
+.destacado {
+  border: 2px solid #e91e63;
+  background: linear-gradient(to bottom, #fff, #fce4ec);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(233,30,99, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(233,30,99, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(233,30,99, 0); }
+}
+
+.tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted #999;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.boton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #e91e63;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.boton:hover {
+  background-color: #c2185b;
+  transform: translateY(-3px);
+}
+
+/* === BOTÓN DARK MODE === */
+.toggle-dark {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* === CLIP-PATH EN TESTIMONIOS === */
+.testimonio {
+  clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
+}
+
+/* === SCROLL SNAP PARA TESTIMONIOS === */
+.testimonios {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+.carrusel {
+  scroll-snap-align: center;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.testimonio {
+  scroll-snap-align: center;
+}
+
+
+body, header, .card, footer, .testimonio {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* === RESTO DE ESTILOS ORIGINALES PEGADOS ABAJO === */
+
+/* tu CSS original sigue acá (lo mantengo como estaba) */
+/* ... PASTE DEL CÓDIGO ORIGINAL QUE ME DISTE ... */
+  
+
+/* === Spinner de carga === */
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #FFD700;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Contador animado === */
+.contador .numero {
+  font-size: 3rem;
+  color: #FFD700;
+  font-weight: bold;
+  display: inline-block;
+  animation: contar 3s ease-in-out forwards;
+}
+
+@keyframes contar {
+  from {
+    content: "0";
+  }
+  to {
+    content: "500+";
+  }
+}
+
+/* Dark mode opcional para spinner */
+body.dark-mode #spinner {
+  background-color: #121212;
+}

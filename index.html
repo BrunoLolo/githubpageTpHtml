@@ -1,1 +1,138 @@
-<h1>Github Page</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">
+      <h1><span style="color: white;">Bruno</span> <span style="color: #FFD700;">Golden</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <button class="toggle-dark" aria-label="Activar modo oscuro" onclick="document.body.classList.toggle('dark-mode')">
+            🌙
+          </button>
+        </li>
+
+      </ul>
+    </nav>
+  </header>
+  <!-- HEADER -->
+  <!--header>
+    <div class="logo">🏋️ Fitness Center</div>
+    <nav class="mega-menu">
+      <ul>
+        <li><a href="#">Clases</a></li>
+        <li><a href="#">Entrenadores</a></li>
+        <li><a href="#">Precios</a></li>
+      </ul>
+    </nav>
+  </header!-->
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay muted loop id="heroVideo">
+      <source src="video/mazza.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay">
+      <h1 class="animated-text"><span style="color: white;">Transforma tu cuerpo, transforma tu vida,</span> <span style="color: #FFD700;">Transformer Forever</span></h1>
+    </div>
+  </section>
+
+  <!--BOTONES-->
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="clases.html" class="boton">Ver Clases</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="entrenadores.html" class="boton">Ver Entrenadores</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="precios.html" class="boton">Ver Planes y Precios</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="blog.html" class="boton">Ir al Blog de Fitness</a>
+    </div>
+      
+    <div style="text-align: center; margin-top: 40px;">
+        <button id="cerrarModalBtn" class="boton">Cerrar</button>
+    </div>
+
+    
+
+  <!-- CLASES DESTACADAS -->
+  <section class="clases">
+    <h2>Clases Destacadas</h2>
+    <div class="cards">
+      <div class="card">Yoga</div>
+      <div class="card">Crossfit</div>
+      <div class="card">Boxeo</div>
+    </div>
+  </section>
+
+  <!-- CONTADOR -->
+  <section class="contador">
+    <h3><span class="numero">500+</span> socios satisfechos</h3>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios">
+    <input type="radio" name="carousel" id="t1" checked>
+    <input type="radio" name="carousel" id="t2">
+    <input type="radio" name="carousel" id="t3">
+    
+    <div class="carrusel">
+      <label for="t1" class="testimonio">"¡Me cambió la vida!"</label>
+      <label for="t2" class="testimonio">"Los entrenadores son increíbles."</label>
+      <label for="t3" class="testimonio">"Ambiente muy motivador."</label>
+    </div>
+  </section>
+
+    
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <form class="newsletter">
+      <label for="email">Suscríbete al Newsletter:</label>
+      <input type="email" id="email" placeholder="Tu correo" />
+      <button>Suscribirse</button>
+    </form>
+
+    <div class="social">
+      <a href="https://www.facebook.com/bruno.mollo.56" target="_blank" rel="noopener">
+        <img src="img/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/bruno_moolo22/" target="_blank" rel="noopener">
+        <img src="img/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.youtube.com/@BrunoMoolo"_blank" rel="noopener">
+        <img src="img/youtube.png" alt="Youtube">
+      </a>
+    </div>
+    
+
+    <div class="mapa"> 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29117.52716356748!2d-65.3394187!3d-24.182571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5e8cb64aa9%3A0xf0c29fcb654394f8!2sQuantum%20fit!5e0!3m2!1ses-419!2sar!4v1744329405496!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+    <a href="contacto.html" class="boton">Contáctanos</a>
+  </footer>
+  
+</body>
+</html>

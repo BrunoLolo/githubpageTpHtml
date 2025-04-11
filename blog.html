@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog de Fitness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-blog.css">
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">
+      <h1><span style="color: white;">Bruno</span> <span style="color: #FFD700;">Golden</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <button class="toggle-dark" aria-label="Activar modo oscuro" onclick="document.body.classList.toggle('dark-mode')">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <script>
+    // Ocultar el spinner después de que la página haya cargado
+    window.addEventListener("load", () => {
+      document.getElementById("spinner").style.display = "none";
+  
+      // Contador animado
+      const numero = document.querySelector(".numero");
+      let count = 0;
+      const target = 500;
+      const speed = 10;
+  
+      const updateCounter = () => {
+        if (count < target) {
+          count += 5;
+          numero.textContent = count + "+";
+          setTimeout(updateCounter, speed);
+        } else {
+          numero.textContent = target + "+";
+        }
+      };
+  
+      updateCounter();
+    });
+  </script>
+
+  <!--header>
+    <h1>Blog de Fitness</h1>
+    <p>Consejos, entrenamientos y más</p>
+  </header!-->
+
+  <!-- Filtros por categoría -->
+  
+  <ul></ul>
+
+  <section class="filtros">
+    <input type="radio" name="categoria" id="todos" checked>
+    <label for="todos">Todos</label>
+    <input type="radio" name="categoria" id="nutricion">
+    <label for="nutricion">Nutrición</label>
+    <input type="radio" name="categoria" id="entrenamiento">
+    <label for="entrenamiento">Entrenamiento</label>
+    <input type="radio" name="categoria" id="bienestar">
+    <label for="bienestar">Bienestar</label>
+  </section>
+
+  <!-- Artículos -->
+  <section class="blog-grid">
+    <article class="card nutricion reveal">
+      <h2>Alimentos para ganar masa muscular</h2>
+      <p>Una guía completa para mejorar tu alimentación.</p>
+    </article>
+    <article class="card entrenamiento reveal">
+      <h2>Rutina HIIT de 20 minutos</h2>
+      <p>Entrena en casa sin equipamiento.</p>
+    </article>
+    <article class="card bienestar reveal">
+      <h2>Cómo dormir mejor y rendir más</h2>
+      <p>La importancia del descanso en tu progreso.</p>
+    </article>
+    <article class="card nutricion reveal">
+      <h2>Top 5 suplementos deportivos</h2>
+      <p>¿Vale la pena invertir en ellos?</p>
+    </article>
+  </section>
+
+  <!-- Sección de comentarios -->
+  <section class="comentarios">
+    <h3>Comentarios</h3>
+    <div class="comentario">
+      <div class="avatar"></div>
+      <div class="texto">
+        <strong>AlexFit</strong>
+        <p>Muy buenos consejos, los probaré esta semana 💪</p>
+      </div>
+    </div>
+    <div class="comentario">
+      <div class="avatar"></div>
+      <div class="texto">
+        <strong>LauGym</strong>
+        <p>¿Podrían hacer un artículo sobre alimentación vegana?</p>
+      </div>
+    </div>
+  </section>
+
+
+    <!--BOTONES-->
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" class="boton">Volver al Inicio</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="clases.html" class="boton">Ver Clases</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="entrenadores.html" class="boton">Ver Entrenadores</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="contacto.html" class="boton">Contáctanos</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="precios.html" class="boton">Ver Planes y Precios</a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <button id="cerrarModalBtn" class="boton">Cerrar</button>
+    </div>
+
+    <!-- FOOTER -->
+  <footer class="footer">
+    <form class="newsletter">
+      <label for="email">Suscríbete al Newsletter:</label>
+      <input type="email" id="email" placeholder="Tu correo" />
+      <button>Suscribirse</button>
+    </form>
+
+    <div class="social">
+      <a href="https://www.facebook.com/bruno.mollo.56" target="_blank" rel="noopener">
+        <img src="img/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/bruno_moolo22/" target="_blank" rel="noopener">
+        <img src="img/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.youtube.com/@BrunoMoolo"_blank" rel="noopener">
+        <img src="img/youtube.png" alt="Youtube">
+      </a>
+    </div>
+    
+
+    <div class="mapa"> 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29117.52716356748!2d-65.3394187!3d-24.182571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5e8cb64aa9%3A0xf0c29fcb654394f8!2sQuantum%20fit!5e0!3m2!1ses-419!2sar!4v1744329405496!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+    <a href="contacto.html" class="boton">Contáctanos</a>
+  </footer>
+
+</body>
+</html>
