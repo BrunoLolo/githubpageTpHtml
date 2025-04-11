@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clases Futuristas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-clases.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <script>
+    // Ocultar el spinner después de que la página haya cargado
+    window.addEventListener("load", () => {
+      document.getElementById("spinner").style.display = "none";
+  
+      // Contador animado
+      const numero = document.querySelector(".numero");
+      let count = 0;
+      const target = 500;
+      const speed = 10;
+  
+      const updateCounter = () => {
+        if (count < target) {
+          count += 5;
+          numero.textContent = count + "+";
+          setTimeout(updateCounter, speed);
+        } else {
+          numero.textContent = target + "+";
+        }
+      };
+  
+      updateCounter();
+    });
+  </script>
+
+  <header class="main-header">
+    <div class="logo">
+      <h1><span style="color: white;">Bruno</span> <span style="color: #FFD700;">Golden</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <button class="toggle-dark" aria-label="Activar modo oscuro" onclick="document.body.classList.toggle('dark-mode')">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="filtros">
+    <h2>Filtrar Clases</h2>
+    <input type="radio" name="filtro" id="todos" checked />
+    <input type="radio" name="filtro" id="crossfit" />
+    <input type="radio" name="filtro" id="yoga" />
+    <input type="radio" name="filtro" id="spinning" />
+    <input type="radio" name="filtro" id="musculacion" />
+  
+    <div class="menu-filtros">
+      <label for="todos">Todos</label>
+      <label for="crossfit">CrossFit</label>
+      <label for="yoga">Yoga</label>
+      <label for="spinning">Spinning</label>
+      <label for="musculacion">Musculación</label>
+    </div>
+  </section>
+
+  <section class="galeria">
+    <div class="clase crossfit"><img src="img/crossfit.jpg" alt="CrossFit"><div class="overlay">CrossFit</div></div>
+    <div class="clase yoga"><img src="img/yoga.jpg" alt="Yoga"><div class="overlay">Yoga</div></div>
+    <div class="clase spinning"><img src="img/spinning.jpeg" alt="Spinning"><div class="overlay">Spinning</div></div>
+    <div class="clase musculacion"><img src="img/musculacion.jpeg" alt="Musculación"><div class="overlay">Musculación</div></div>
+  </section>
+
+  <section class="horarios">
+    <h2>Horarios Semanales</h2>
+    <div class="tabla-responsive">
+      <table>
+        <thead>
+          <tr><th>Día</th><th>Clase</th><th>Hora</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Lunes</td><td>CrossFit</td><td>08:00 - 09:00</td></tr>
+          <tr><td>Martes</td><td>Yoga</td><td>10:00 - 11:00</td></tr>
+          <tr><td>Miércoles</td><td>Spinning</td><td>18:00 - 19:00</td></tr>
+          <tr><td>Jueves</td><td>Musculación</td><td>15:00 - 16:00</td></tr>
+          <tr><td>Viernes</td><td>CrossFit</td><td>08:00 - 09:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="boton">Inicio</a>
+    <a href="entrenadores.html" class="boton">Entrenadores</a>
+    <a href="precios.html" class="boton">Precios</a>
+    <a href="contacto.html" class="boton">Contáctanos</a>
+    <a href="blog.html" class="boton">Blog</a>
+  </div>
+
+  <footer class="footer">
+    <form class="newsletter">
+      <label for="email">Suscríbete:</label>
+      <input type="email" id="email" placeholder="Tu correo" />
+      <button class="boton">Suscribirse</button>
+    </form>
+
+    <div class="social">
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+    </div>
+
+    <div class="mapa">
+      <iframe src="https://www.google.com/maps/embed?..." width="600" height="450" style="border:0;" allowfullscreen></iframe>
+    </div>
+  </footer>
+</body>
+</html>

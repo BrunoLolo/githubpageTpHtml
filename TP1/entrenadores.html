@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entrenadores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-entrenadores.css" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <script>
+    // Ocultar el spinner después de que la página haya cargado
+    window.addEventListener("load", () => {
+      document.getElementById("spinner").style.display = "none";
+  
+      // Contador animado
+      const numero = document.querySelector(".numero");
+      let count = 0;
+      const target = 500;
+      const speed = 10;
+  
+      const updateCounter = () => {
+        if (count < target) {
+          count += 5;
+          numero.textContent = count + "+";
+          setTimeout(updateCounter, speed);
+        } else {
+          numero.textContent = target + "+";
+        }
+      };
+  
+      updateCounter();
+    });
+  </script>
+
+  <header class="main-header">
+    <div class="logo">
+      <h1><span style="color: white;">Bruno</span> <span style="color: #FFD700;">Golden</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <button class="toggle-dark" aria-label="Activar modo oscuro" onclick="document.body.classList.toggle('dark-mode')">
+            🌙
+          </button>
+        </li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+
+  <!--header>
+    <h1>Conoce a Nuestros Entrenadores</h1>
+  </header!-->
+
+  <section class="contenedor-tarjetas">
+    <div class="tarjeta">
+      <div class="cara frontal">
+        <img src="img/emma.jpeg" alt="Entrenador 1" />
+        <h3>Ana</h3>
+        <p>Especialista en Yoga</p>
+      </div>
+      <div class="cara trasera">
+        <h3>Ana Martínez</h3>
+        <p>10 años de experiencia en Yoga y Mindfulness.</p>
+        <div class="habilidades">
+          <p>Flexibilidad</p>
+          <div class="barra"><div class="nivel" style="width: 80%;"></div></div>
+          <p>Resistencia</p>
+          <div class="barra"><div class="nivel" style="width: 70%;"></div></div>
+        </div>
+        <div class="estrellas">
+          <input type="radio" id="ana-5" name="ana" checked>
+          <label for="ana-5"></label>
+          <input type="radio" id="ana-4" name="ana">
+          <label for="ana-4"></label>
+          <input type="radio" id="ana-3" name="ana">
+          <label for="ana-3"></label>
+          <input type="radio" id="ana-2" name="ana">
+          <label for="ana-2"></label>
+          <input type="radio" id="ana-1" name="ana">
+          <label for="ana-1"></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Puedes duplicar y cambiar este bloque para más entrenadores -->
+    <div class="tarjeta">
+      <div class="cara frontal">
+        <img src="img/chad.png" alt="Entrenador 2" />
+        <h3>Carlos</h3>
+        <p>Entrenador de CrossFit</p>
+      </div>
+      <div class="cara trasera">
+        <h3>Carlos Pérez</h3>
+        <p>Atleta certificado, 8 años entrenando grupos de alto rendimiento.</p>
+        <div class="habilidades">
+          <p>Fuerza</p>
+          <div class="barra"><div class="nivel" style="width: 90%;"></div></div>
+          <p>Agilidad</p>
+          <div class="barra"><div class="nivel" style="width: 75%;"></div></div>
+        </div>
+        <div class="estrellas">
+          <input type="radio" id="carlos-5" name="carlos" checked>
+          <label for="carlos-5"></label>
+          <input type="radio" id="carlos-4" name="carlos">
+          <label for="carlos-4"></label>
+          <input type="radio" id="carlos-3" name="carlos">
+          <label for="carlos-3"></label>
+          <input type="radio" id="carlos-2" name="carlos">
+          <label for="carlos-2"></label>
+          <input type="radio" id="carlos-1" name="carlos">
+          <label for="carlos-1"></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entrenadora nueva -->
+    <div class="tarjeta">
+      <div class="cara frontal">
+        <img src="img/locomotora.jpg" alt="Entrenadora 3" />
+        <h3>Laura</h3>
+        <p>Especialista en Pilates</p>
+      </div>
+      <div class="cara trasera">
+        <h3>Laura Gómez</h3>
+        <p>Fisioterapeuta y experta en pilates terapéutico con más de 7 años de experiencia.</p>
+        <div class="habilidades">
+          <p>Postura</p>
+          <div class="barra"><div class="nivel" style="width: 85%;"></div></div>
+          <p>Equilibrio</p>
+          <div class="barra"><div class="nivel" style="width: 80%;"></div></div>
+        </div>
+        <div class="estrellas">
+          <input type="radio" id="laura-5" name="laura" checked>
+          <label for="laura-5"></label>
+          <input type="radio" id="laura-4" name="laura">
+          <label for="laura-4"></label>
+          <input type="radio" id="laura-3" name="laura">
+          <label for="laura-3"></label>
+          <input type="radio" id="laura-2" name="laura">
+          <label for="laura-2"></label>
+          <input type="radio" id="laura-1" name="laura">
+          <label for="laura-1"></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entrenador nuevo -->
+    <div class="tarjeta">
+      <div class="cara frontal">
+        <img src="img/peter.jpg" alt="Entrenador 4" />
+        <h3>Diego</h3>
+        <p>Entrenador Funcional</p>
+      </div>
+      <div class="cara trasera">
+        <h3>Diego Fernández</h3>
+        <p>Apasionado del entrenamiento funcional, con 6 años en el rubro fitness.</p>
+        <div class="habilidades">
+          <p>Velocidad</p>
+          <div class="barra"><div class="nivel" style="width: 70%;"></div></div>
+          <p>Potencia</p>
+          <div class="barra"><div class="nivel" style="width: 85%;"></div></div>
+        </div>
+        <div class="estrellas">
+          <input type="radio" id="diego-5" name="diego" checked>
+          <label for="diego-5"></label>
+          <input type="radio" id="diego-4" name="diego">
+          <label for="diego-4"></label>
+          <input type="radio" id="diego-3" name="diego">
+          <label for="diego-3"></label>
+          <input type="radio" id="diego-2" name="diego">
+          <label for="diego-2"></label>
+          <input type="radio" id="diego-1" name="diego">
+          <label for="diego-1"></label>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!--BOTONES-->
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" class="boton">Volver al Inicio</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="clases.html" class="boton">Ver Clases</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="contacto.html" class="boton">Contáctanos</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="precios.html" class="boton">Ver Planes y Precios</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="blog.html" class="boton">Ir al Blog de Fitness</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <button id="cerrarModalBtn" class="boton">Cerrar</button>
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <form class="newsletter">
+        <label for="email">Suscríbete al Newsletter:</label>
+        <input type="email" id="email" placeholder="Tu correo" />
+        <button>Suscribirse</button>
+      </form>
+
+      <div class="social">
+        <a href="https://www.facebook.com/bruno.mollo.56" target="_blank" rel="noopener">
+          <img src="img/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/bruno_moolo22/" target="_blank" rel="noopener">
+          <img src="img/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@BrunoMoolo"_blank" rel="noopener">
+          <img src="img/youtube.png" alt="Youtube">
+        </a>
+      </div>
+      
+
+      <div class="mapa"> 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29117.52716356748!2d-65.3394187!3d-24.182571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5e8cb64aa9%3A0xf0c29fcb654394f8!2sQuantum%20fit!5e0!3m2!1ses-419!2sar!4v1744329405496!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+      <a href="contacto.html" class="boton">Contáctanos</a>
+    </footer>
+
+</body>
+</html>
