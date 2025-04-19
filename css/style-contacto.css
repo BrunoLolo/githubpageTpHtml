@@ -1,0 +1,342 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  animation: fadeInBody 1.2s ease;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.main-header {
+  background-image: url('img/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 40px 60px;
+  color: white;
+  animation: zoomHeader 6s ease-in-out infinite alternate;
+}
+
+.main-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes zoomHeader {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
+
+.main-header .logo h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #FFD700;
+  animation: slideInLeft 1s ease;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.main-nav a:hover {
+  color: #e91e63;
+  transform: scale(1.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  color: white;
+}
+
+.contenedor-contacto {
+  max-width: 800px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(233, 30, 99, 0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #FFD700;
+  font-size: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-grid .campo {
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp 0.8s ease;
+}
+
+.form-grid .campo textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  background-color: #1c1c1c;
+  color: white;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #e91e63;
+  box-shadow: 0 0 10px #e91e63;
+  outline: none;
+}
+
+input:valid, textarea:valid {
+  border-color: #4caf50;
+}
+
+input:invalid, textarea:invalid {
+  border-color: #f44336;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #e91e63, #ff9800);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #c2185b, #ff5722);
+  transform: scale(1.05);
+}
+
+.spinner {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #e91e63;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBody 0.3s ease;
+}
+
+.modal-content {
+  background: #121212;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-content button:hover {
+  background: #388e3c;
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.boton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #e91e63;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.boton:hover {
+  background-color: #c2185b;
+  transform: scale(1.1);
+}
+
+/* === BOTÓN DARK MODE === */
+.toggle-dark {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* === CLIP-PATH EN TESTIMONIOS === */
+.testimonio {
+  clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
+}
+
+/* === SCROLL SNAP PARA TESTIMONIOS === */
+.testimonios {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+.carrusel {
+  scroll-snap-align: center;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.testimonio {
+  scroll-snap-align: center;
+}
+
+
+body, header, .card, footer, .testimonio {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* === RESTO DE ESTILOS ORIGINALES PEGADOS ABAJO === */
+
+/* tu CSS original sigue acá (lo mantengo como estaba) */
+/* ... PASTE DEL CÓDIGO ORIGINAL QUE ME DISTE ... */
+
+/* === Spinner de carga === */
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #FFD700;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Contador animado === */
+.contador .numero {
+  font-size: 3rem;
+  color: #FFD700;
+  font-weight: bold;
+  display: inline-block;
+  animation: contar 3s ease-in-out forwards;
+}
+
+@keyframes contar {
+  from {
+    content: "0";
+  }
+  to {
+    content: "500+";
+  }
+}
+
+/* Dark mode opcional para spinner */
+body.dark-mode #spinner {
+  background-color: #121212;
+}
+
+  

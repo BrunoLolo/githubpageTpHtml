@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clases Futuristas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/TP1/css/style-clases.css" />
+  <link rel="stylesheet" href="/TP1/css/style.css" />
+  <link rel="stylesheet" href="/TP1/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <script>
+    // Ocultar el spinner después de que la página haya cargado
+    window.addEventListener("load", () => {
+      document.getElementById("spinner").style.display = "none";
+  
+      // Contador animado
+      const numero = document.querySelector(".numero");
+      let count = 0;
+      const target = 500;
+      const speed = 10;
+  
+      const updateCounter = () => {
+        if (count < target) {
+          count += 5;
+          numero.textContent = count + "+";
+          setTimeout(updateCounter, speed);
+        } else {
+          numero.textContent = target + "+";
+        }
+      };
+  
+      updateCounter();
+    });
+  </script>
+
+<header class="main-header">
+  <div class="logo">
+    <h1><span style="color: white;">Bruno</span> <span style="color: #FFD700;">Golden</span></h1>
+  </div>
+  <nav class="main-nav">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="/TP1//html/index.html">Inicio</a>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="/TP1/html/clases.html">Clases</a></li>
+        <li><a href="/TP1/html/entrenadores.html">Entrenadores</a></li>
+        <li><a href="/TP1/html/precios.html">Precios</a></li>
+        <li><a href="/TP1/html/contacto.html">Contacto</a></li>
+        <li><a href="/TP1/html/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <button class="toggle-dark" aria-label="Activar modo oscuro" onclick="document.body.classList.toggle('dark-mode')">
+      🌙
+    </button>
+  </nav>
+</header>
+
+  <section class="filtros">
+    <h2>Filtrar Clases</h2>
+    <div class="menu-filtros">
+      <button class="filtro-btn" data-filtro="todos">Todos</button>
+      <button class="filtro-btn" data-filtro="crossfit">CrossFit</button>
+      <button class="filtro-btn" data-filtro="yoga">Yoga</button>
+      <button class="filtro-btn" data-filtro="spinning">Spinning</button>
+      <button class="filtro-btn" data-filtro="musculacion">Musculación</button>
+    </div>
+  </section>
+
+
+  <section class="galeria" id="galeria">
+    <div class="grid">
+      <div class="clase crossfit"><img src="/TP1/img/crossfit.jpg" alt="CrossFit"><div class="overlay">CrossFit</div></div>
+      <div class="clase yoga"><img src="/TP1/img/yoga.jpg" alt="Yoga"><div class="overlay">Yoga</div></div>
+      <div class="clase spinning"><img src="/TP1/img/spinning.jpeg" alt="Spinning"><div class="overlay">Spinning</div></div>
+      <div class="clase musculacion"><img src="/TP1/img/musculacion.jpeg" alt="Musculación"><div class="overlay">Musculación</div></div>
+    </div>
+  </section>
+
+  <section class="horarios">
+    <h2>Horarios Semanales</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped text-center align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Día</th>
+            <th>Clase</th>
+            <th>Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Lunes</td><td>CrossFit</td><td>08:00 - 09:00</td></tr>
+          <tr><td>Martes</td><td>Yoga</td><td>10:00 - 11:00</td></tr>
+          <tr><td>Miércoles</td><td>Spinning</td><td>18:00 - 19:00</td></tr>
+          <tr><td>Jueves</td><td>Musculación</td><td>15:00 - 16:00</td></tr>
+          <tr><td>Viernes</td><td>CrossFit</td><td>08:00 - 09:00</td></tr>
+        </tbody>
+      </table>
+    </div>    
+  </section>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="boton">Inicio</a>
+    <a href="entrenadores.html" class="boton">Entrenadores</a>
+    <a href="precios.html" class="boton">Precios</a>
+    <a href="contacto.html" class="boton">Contáctanos</a>
+    <a href="blog.html" class="boton">Blog</a>
+  </div>
+
+  <footer class="footer">
+    <form class="newsletter">
+      <label for="email">Suscríbete:</label>
+      <input type="email" id="email" placeholder="Tu correo" />
+      <button class="boton">Suscribirse</button>
+    </form>
+
+    <div class="social">
+      <a href="#"><img src="/TP1/img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="/TP1/img/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="/TP1/img/youtube.png" alt="YouTube"></a>
+    </div>
+
+    <div class="mapa"> 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29117.52716356748!2d-65.3394187!3d-24.182571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5e8cb64aa9%3A0xf0c29fcb654394f8!2sQuantum%20fit!5e0!3m2!1ses-419!2sar!4v1744329405496!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </footer>
+
+   <!-- jQuery (debe ir antes que main.js) -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <!-- Tu archivo de JS -->
+   <script src="/TP1/js/clases-js"></script>
+
+   <!-- Masonry JS -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+   
+   <script src="/TP1/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

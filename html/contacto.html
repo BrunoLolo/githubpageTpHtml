@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/TP1/css/style-contacto.css" />
+  <link rel="stylesheet" href="/TP1/css/style.css" />
+  <link rel="stylesheet" href="/TP1/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+  <header class="main-header">
+    <div class="logo">
+      <h1><span style="color: white;">Bruno</span> <span style="color: #FFD700;">Golden</span></h1>
+    </div>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="index.html">Inicio</a>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="/TP1/html/clases.html">Clases</a></li>
+          <li><a href="/TP1/html/entrenadores.html">Entrenadores</a></li>
+          <li><a href="/TP1/html/precios.html">Precios</a></li>
+          <li><a href="/TP1/html/contacto.html">Contacto</a></li>
+          <li><a href="/TP1/html/blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <button class="toggle-dark" aria-label="Activar modo oscuro" onclick="document.body.classList.toggle('dark-mode')">
+        🌙
+      </button>
+    </nav>
+  </header>
+
+<!--FORMLARIO-->
+  
+
+  <div class="contenedor-contacto">
+    <h2>Contáctanos</h2>
+
+    <form id="formulario">
+      <div class="form-grid">
+        <div class="campo">
+          <label>Nombre:</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" required minlength="2" />
+        </div>
+        <div class="campo">
+          <label>Email:</label>
+          <input type="email" id="email" name="email" class="form-control" required />
+        </div>
+        <div class="campo">
+          <label>Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" class="form-control" pattern="[0-9]{9,}" />
+        </div>
+        <div class="campo">
+          <label>Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" class="form-control" required minlength="10"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" id="enviarBtn">Enviar</button>
+
+      <!-- Spinner Bootstrap oculto -->
+      <div id="spinner" class="text-center my-3" style="display: none;">
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+      </div>
+
+      
+
+  <!-- MODAL Bootstrap -->
+  <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="modalConfirmacionLabel">¡Gracias por tu mensaje!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          Nos pondremos en contacto contigo pronto.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--BOTONES-->
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" class="boton">Volver al Inicio</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="clases.html" class="boton">Ver Clases</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="entrenadores.html" class="boton">Ver Entrenadores</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="precios.html" class="boton">Ver Planes y Precios</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="blog.html" class="boton">Ir al Blog de Fitness</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <button id="cerrarModalBtn" class="boton">Cerrar</button>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <form class="newsletter">
+        <label for="email">Suscríbete al Newsletter:</label>
+        <input type="email" id="email" placeholder="Tu correo" />
+        <button>Suscribirse</button>
+      </form>
+
+      <div class="social">
+        <a href="https://www.facebook.com/bruno.mollo.56" target="_blank" rel="noopener">
+          <img src="/TP1/img/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/bruno_moolo22/" target="_blank" rel="noopener">
+          <img src="/TP1/img/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@BrunoMoolo"_blank" rel="noopener">
+          <img src="/TP1/img/youtube.png" alt="Youtube">
+        </a>
+      </div>
+      
+
+      <div class="mapa"> 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29117.52716356748!2d-65.3394187!3d-24.182571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5e8cb64aa9%3A0xf0c29fcb654394f8!2sQuantum%20fit!5e0!3m2!1ses-419!2sar!4v1744329405496!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+      <a href="/TP1//html/contacto.html" class="boton">Contáctanos</a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/TP1/js/contact.js"></script>
+    <script src="/TP1/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

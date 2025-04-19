@@ -1,0 +1,253 @@
+/* FILTROS */
+.filtros {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.filtros input {
+  display: none;
+}
+
+.filtros label {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background: #ddd;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.filtros input:checked + label {
+  background: #e91e63;
+  color: white;
+  box-shadow: 0 2px 6px rgba(233, 30, 99, 0.4);
+}
+
+/* GRID */
+.blog-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.6s ease-out forwards;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h2 {
+  color: #e91e63;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal con delay */
+.reveal:nth-child(1) { animation-delay: 0.2s; }
+.reveal:nth-child(2) { animation-delay: 0.4s; }
+.reveal:nth-child(3) { animation-delay: 0.6s; }
+.reveal:nth-child(4) { animation-delay: 0.8s; }
+
+/* Filtro con radio */
+.card { display: none; }
+
+#todos:checked ~ .blog-grid .card,
+#nutricion:checked ~ .blog-grid .nutricion,
+#entrenamiento:checked ~ .blog-grid .entrenamiento,
+#bienestar:checked ~ .blog-grid .bienestar {
+  display: block;
+}
+
+/* COMENTARIOS */
+.comentarios {
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comentario {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.comentario:hover {
+  transform: scale(1.02);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  border-radius: 50%;
+  margin-right: 16px;
+  position: relative;
+}
+
+.avatar::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+}
+
+.texto p {
+  margin: 0;
+}
+
+/* === BOTÓN DARK MODE === */
+.toggle-dark {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* === CLIP-PATH EN TESTIMONIOS === */
+.testimonio {
+  clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
+}
+
+/* === SCROLL SNAP PARA TESTIMONIOS === */
+.testimonios {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+}
+
+.carrusel {
+  scroll-snap-align: center;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.testimonio {
+  scroll-snap-align: center;
+}
+
+
+body, header, .card, footer, .testimonio {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* === RESTO DE ESTILOS ORIGINALES PEGADOS ABAJO === */
+
+/* tu CSS original sigue acá (lo mantengo como estaba) */
+/* ... PASTE DEL CÓDIGO ORIGINAL QUE ME DISTE ... */
+  
+
+/* === Spinner de carga === */
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Dark mode opcional para spinner */
+body.dark-mode #spinner {
+  background-color: #121212;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/*AVATAR*/
+.comentario {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 15px;
+  position: relative;
+}
+
+.avatar::before {
+  content: "👤"; /* O podés usar una imagen de fondo si querés */
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 24px;
+}
+
+.texto {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  position: relative;
+}
+
+/*COMENTARIO*/
+.comentario.destacado {
+  background-color: #fff8dc;
+  border: 2px solid gold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.respuesta {
+  margin-top: 10px;
+}
+
+.respuesta-input {
+  padding: 5px;
+  width: 80%;
+  margin-right: 5px;
+}
+
+.respuesta-mensaje {
+  margin-top: 10px;
+  background-color: #e0ffe0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
